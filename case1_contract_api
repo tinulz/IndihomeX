@@ -1,0 +1,68 @@
+{
+  "title": "Contract API",
+  "description": "This is a sample contract API",
+  "termsOfService": "http://example.com/terms/",
+  "contact": 
+  {
+    "name": "API Support",
+    "url": "http://www.example.com/support",
+    "email": "support@example.com"
+  },
+  "license": {
+    "name": "Apache 2.0",
+    "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+  },
+  "version": "1.0.1",
+  "components": {
+    "Category": {
+      "type": "object",
+      "properties": {
+        "namaProduk": {
+          "type": "string"
+        },
+        "kecepatan": {
+          "type": "string"
+        },
+        "deskripsi": {
+          "type": "string"
+        },
+        "logo": {
+          "type": "url"
+        }
+      }
+    },
+  "paths":
+    "/data/lihatProduk":{
+      "get":{
+        "tags":[
+          "paket"
+        ]
+        "parameters":[
+          {
+            "namaProduk": "Paket Spesial IndihomeX",
+            "kecepatan": "20Mbps",
+            "deskripsi": "lorem ipsum"
+            "logo": ".../logo.png"
+          }
+        ]
+        "responses": {
+         "200":{
+          "description": "successful operation",
+          "schema": {
+              "type": "array"
+           }
+          },
+          "400": {
+            "description": "Entity not found."
+          }
+         }
+      }
+    }
+  "securitySchemes": {
+    "api_key": {
+      "type": "apiKey",
+      "name": "api_key",
+      "in": "header"
+    }
+  }
+}
